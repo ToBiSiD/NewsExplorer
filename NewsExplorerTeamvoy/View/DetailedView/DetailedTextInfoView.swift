@@ -21,7 +21,7 @@ struct DetailedTextInfoView: View {
                 
                 Spacer()
             }
-            .foregroundColor(.black)
+            .foregroundColor(ColorConstants.mainTextColor)
             .padding(.horizontal)
             
             Divider()

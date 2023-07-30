@@ -13,7 +13,7 @@ struct SpinningCircle: View {
     var color: Color = .black
     
     var animation: Animation {
-        .easeInOut(duration: 2)
+        .easeOut(duration: 2)
         .repeatForever(autoreverses: false)
     }
     

@@ -23,8 +23,8 @@ class NewsViewModel : ObservableObject {
     private let api = NewsAPIService()
     
     func searchNews() {
-        self.fetchNews(searchParameters: SearchParameters(query: searchText, from: fromDate, to: toDate, sortBy: sortBy, searchIn: searchIn, languages: languages))
         isSearchingStarted = true
+        self.fetchNews(searchParameters: SearchParameters(query: searchText, from: fromDate, to: toDate, sortBy: sortBy, searchIn: searchIn, languages: languages))
     }
     
     private func fetchNews(searchParameters: SearchParameters) {
@@ -34,6 +34,7 @@ class NewsViewModel : ObservableObject {
                 case .success(let news):
                     self.news = news
                     self.errorText = nil
+                    self.isSearchingStarted = false
                 case .failure(let error):
                     print("Error fetching news: \(error.localizedDescription)")
                     self.errorText = error.localizedDescription
@@ -49,6 +50,9 @@ class NewsViewModel : ObservableObject {
         sortBy = .publishedAt
         searchIn = SearchInOption.allCases
         languages = LanguageOption.allCases
+        searchText = ""
         isSearchingStarted = false
+        errorText = nil
+        news.removeAll()
     }
 }

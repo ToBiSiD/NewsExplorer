@@ -33,9 +33,8 @@ struct ImageTextFieldView: View {
             }
             
             TextField("", text: $textValue)
-                .foregroundColor(.black)
                 .placeholder(when: textValue.isEmpty, placeholder: {
-                    Text(placeholderText)
+                    Text(placeholderText).foregroundColor(ColorConstants.buttonTextColor)
                 })
                 .submitLabel(buttonSubmitLable)
                 .onSubmit {
@@ -47,9 +46,11 @@ struct ImageTextFieldView: View {
         }
         .frame(maxHeight: 35)
         .padding(padding)
+        .foregroundColor(ColorConstants.buttonTextColor)
+        .background(ColorConstants.disableButtonColor)
         .cornerRadius(cornerRadius)
         .padding(.horizontal, horizontalPadding)
-        .shadow(color: .gray, radius: 10)
+        .shadow(color: ColorConstants.shadowColor, radius: 8)
         
     }
 }

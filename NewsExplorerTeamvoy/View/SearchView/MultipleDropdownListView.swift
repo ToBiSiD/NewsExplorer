@@ -31,7 +31,7 @@ struct MultipleDropdownListView<Option : SearchingOption> : View {
                             .rotationEffect(.degrees( isOpen ? -180 : 0))
                             .padding(.horizontal)
                     }
-                    .foregroundColor(.black)
+                    .foregroundColor(ColorConstants.buttonTextColor)
                     .frame(height: 44)
                 }
             }
@@ -41,9 +41,9 @@ struct MultipleDropdownListView<Option : SearchingOption> : View {
                     .padding(.vertical)
             }
         }
-        .background(Color(.systemGray3))
+        .background(ColorConstants.disableButtonColor)
         .cornerRadius(15)
-        .shadow(color: Color(.darkGray), radius: 10)
+        .shadow(color: ColorConstants.shadowColor, radius: 8)
         .padding(.horizontal)
     }
     

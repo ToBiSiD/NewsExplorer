@@ -14,7 +14,7 @@ struct SearchPanelView: View {
     @State private var isOpenSearchSettings: Bool = false
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(spacing: 15) {
             HStack{
                 SearchBarView(text: $viewModel.searchText, isEditing: $isEditing)
                     .onTapGesture {
@@ -29,10 +29,10 @@ struct SearchPanelView: View {
                     Image(systemName: "chevron.down")
                         .frame(width: 44, height: 44)
                         .rotationEffect(.degrees( isOpenSearchSettings ? -180 : 0))
-                        .background(Color(.systemBlue))
-                        .foregroundColor(.white)
+                        .background(ColorConstants.mainButtonColor)
+                        .foregroundColor(.black)
                         .cornerRadius(15)
-                        .shadow(color: Color(.darkGray), radius: 10)
+                        .shadow(color: ColorConstants.shadowColor, radius: 10)
                     
                 }
             }
@@ -63,7 +63,7 @@ struct SearchPanelView: View {
                 viewModel.resetSearchingSettings()
             }
             
-            SearchBarButtonView(title: "Search", backgroundColor: viewModel.searchText.isEmpty ? Color(.systemGray) : Color(.systemBlue)) {
+            SearchBarButtonView(title: "Search", backgroundColor: viewModel.searchText.isEmpty ? ColorConstants.disableButtonColor: ColorConstants.mainButtonColor) {
                 withAnimation() {
                     isOpenSearchSettings = false
                 }

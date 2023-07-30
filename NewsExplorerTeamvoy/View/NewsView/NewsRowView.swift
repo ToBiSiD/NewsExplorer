@@ -11,16 +11,26 @@ struct NewsRowView: View {
     let article: NewsArticle
     
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .leading) {
+            Divider()
+                .frame(height: 2)
+                .background(Color(.systemGray))
+            
             VStack(alignment: .leading) {
                 Text(article.title)
                     .font(.title2)
                     .fontWeight(.semibold)
                     .lineLimit(1)
+                    .multilineTextAlignment(.leading)
+                
+                Divider()
+                    .background(Color(.systemGray))
+                    .padding(.bottom, 10)
                 
                 if let description = article.description {
                     Text(description)
                         .lineLimit(3)
+                        .multilineTextAlignment(.leading)
                 }
                 
             }
@@ -32,7 +42,7 @@ struct NewsRowView: View {
                 .background(Color(.systemGray))
         }
         .background(Color(.systemGray6))
-        .foregroundColor(.black)
+        .foregroundColor(ColorConstants.mainTextColor)
         .frame(maxHeight: 150)
         
     }

@@ -26,7 +26,7 @@ struct SingleDropdownListView<Option : SearchingOption> : View {
                 }
                 .pickerStyle(.segmented)
             }
-            .foregroundColor(.black)
+            .foregroundColor(ColorConstants.mainTextColor)
             .frame(height: 44)
         }
     }

@@ -15,9 +15,13 @@ struct DetailedNewsView: View {
             VStack(spacing: 10) {
                 DetailedTextInfoView(title: "Title:", text: newsArticle.title)
                 
-                DetailedTextInfoView(title: "Description:", text: newsArticle.description ?? "")
+                if let description = newsArticle.description {
+                    DetailedTextInfoView(title: "Description:", text: description)
+                }
                 
-                DetailedTextInfoView(title: "Author:", text: newsArticle.author ?? "")
+                if let author = newsArticle.author {
+                    DetailedTextInfoView(title: "Author:", text: author)
+                }
                 
                 DetailedTextInfoView(title: "Published at:", text: newsArticle.formattedPublishedDate)
                 
@@ -33,10 +37,10 @@ struct DetailedNewsView: View {
                             Color.gray
                             
                             VStack {
-                                SpinningCircle(lineWidth: 7, color: Color(.systemGray3))
+                                SpinningCircle(lineWidth: 7, color: .white)
                                     .frame(width: 100)
                                 
-                                Text("Loading...").foregroundColor(Color(.systemGray3))
+                                AnimatedTextWithDotsView(text: "Loading").foregroundColor(.white)
                             }
                             .padding(.vertical, 30)
                             
@@ -52,10 +56,10 @@ struct DetailedNewsView: View {
                     } label: {
                         Text("Jump to Article")
                             .frame(width: 340, height: 44)
-                            .foregroundColor(.white)
-                            .background(Color(.systemBlue))
+                            .foregroundColor(ColorConstants.buttonTextColor)
+                            .background(ColorConstants.mainButtonColor)
                             .cornerRadius(15)
-                            .shadow(color: Color(.darkGray), radius: 10)
+                            .shadow(color: ColorConstants.shadowColor, radius: 8)
                     }
                     
                 }

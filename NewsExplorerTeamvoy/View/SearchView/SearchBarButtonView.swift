@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchBarButtonView: View {
     var title: String
-    var backgroundColor = Color(.systemBlue)
+    var backgroundColor = ColorConstants.mainButtonColor
     var tapAction: () -> Void
     
     var body: some View {
@@ -18,10 +18,10 @@ struct SearchBarButtonView: View {
         } label: {
             Text(title)
                 .frame(width: 340, height: 44)
-                .foregroundColor(.white)
+                .foregroundColor(ColorConstants.buttonTextColor)
                 .background(backgroundColor)
                 .cornerRadius(15)
-                .shadow(color: Color(.darkGray), radius: 10)
+                .shadow(color: ColorConstants.shadowColor, radius: 8)
         }
     }
 }

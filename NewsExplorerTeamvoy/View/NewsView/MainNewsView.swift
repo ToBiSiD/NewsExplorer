@@ -65,7 +65,7 @@ struct MainNewsView: View {
                 if let errorMessage = newsViewModel.errorText {
                     Text(errorMessage)
                 } else {
-                    Text("Zero results")
+                    AnimatedTextWithDotsView(text: "Searching")
                 }
             }
         }

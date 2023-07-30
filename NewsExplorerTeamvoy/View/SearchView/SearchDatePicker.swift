@@ -17,6 +17,7 @@ struct SearchDatePicker: View {
     var body: some View {
         DatePicker(title, selection: $selectedDate, in: (minDateConstrain...maxDateConstrain),displayedComponents: [.date]
         )
+        .foregroundColor(ColorConstants.mainTextColor)
             .datePickerStyle(.compact)
     }
 }

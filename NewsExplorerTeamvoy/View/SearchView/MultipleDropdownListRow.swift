@@ -28,7 +28,7 @@ struct MultipleDropdownListRow: View {
                     
                     Image(systemName: isSelected ? onImageName : offImageName)
                 }
-                .foregroundColor(isSelected ? .black : .gray)
+                .foregroundColor(ColorConstants.buttonTextColor)
                 .padding(.horizontal)
             }
         }
