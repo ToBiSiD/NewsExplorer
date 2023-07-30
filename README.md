@@ -18,5 +18,5 @@
 - implement user interaction with search settings
 - add animations: [TextWithAnimatedDots](https://github.com/ToBiSiD/NewsExplorer/blob/main/NewsExplorerTeamvoy/View/Components/AnimatedTextWithDotsView.swift), [LoadingCircle](https://github.com/ToBiSiD/NewsExplorer/blob/main/NewsExplorerTeamvoy/View/Components/SpinningCircle.swift)
 - add Utils classes and Extensions  
-- customize Views using Color Sets (for ![dark Mode](https://drive.google.com/file/d/1OAv_6rkOKMdMZ8TxJMZ4YdVZLmjM-Yp8/view?usp=share_link) / ![light Mode](https://drive.google.com/file/d/1U2STcmGMSudYsYNMOT7IIL-voBSmdeE_/uc?export=download))
+- customize Views using Color Sets (for ![dark Mode](https://drive.google.com/file/d/1OAv_6rkOKMdMZ8TxJMZ4YdVZLmjM-Yp8/view?usp=share_link) / ![light Mode](https://drive.google.com/file/d/uc?export=download&id=1U2STcmGMSudYsYNMOT7IIL-voBSmdeE_))
 
